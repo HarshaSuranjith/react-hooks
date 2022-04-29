@@ -2,11 +2,11 @@
 // http://localhost:3000/isolated/exercise/04.js
 
 import * as React from 'react'
+import {useLocalStorageState} from '../utils'
 
-
-const initialSquares = Array(9).fill(null);
+const initialSquares = Array(9).fill(null)
 function Board() {
-  const [squares, setSquares] = React.useState(initialSquares)
+  const [squares, setSquares] = useLocalStorageState('squares', initialSquares)
 
   // 🐨 We'll need the following bits of derived state:
   const nextValue = calculateNextValue(squares)
